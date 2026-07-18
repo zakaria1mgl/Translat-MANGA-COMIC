@@ -1,0 +1,38 @@
+# ── Backbone (auto CPU/CUDA) ────────────────────────────────
+torch>=2.1.0
+torchvision>=0.16.0
+
+# ── Stage 1: Bubble / text detection ────────────────────────
+ultralytics>=8.1.0
+huggingface_hub>=0.20.0
+
+# ── Stage 2: OCR ────────────────────────────────────────────
+paddleocr>=2.7.0
+paddlepaddle>=2.6.0
+transformers>=4.38.0          # TrOCR + Aya + NLLB
+sentencepiece>=0.1.99
+realesrgan>=0.3.0             # small-text upscaling
+basicsr>=1.4.2
+
+# ── Stage 3: Cleaning ───────────────────────────────────────
+symspellpy>=6.7.7
+
+# ── Stage 4: Translation ────────────────────────────────────
+accelerate>=0.27.0
+bitsandbytes>=0.42.0 ; platform_system == "Linux"   # 4-bit GPU path
+llama-cpp-python>=0.2.55                            # GGUF CPU path
+
+# ── Stage 5: Inpainting ─────────────────────────────────────
+iopaint>=1.2.2                # LaMa
+
+# ── Stage 6: Typesetting / RTL ──────────────────────────────
+Pillow>=10.0.0
+arabic-reshaper>=3.0.0
+python-bidi>=0.4.2
+
+# ── Image ops ───────────────────────────────────────────────
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# ── UI ──────────────────────────────────────────────────────
+gradio>=4.19.0
